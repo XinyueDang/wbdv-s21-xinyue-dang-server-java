@@ -1,10 +1,29 @@
 .wbdv-sticky-top {
     position: fixed;
     width: 100%;
-    background-color: white;
+    background-color: #6495ED;
     z-index: 1;
 }
 
 .wbdv-padding-5px {
     padding: 5px;
 }
+
+.page-header{
+    color: white;
+    margin-top: 5px;
+}
+
+.nav-btn{
+    color: white;
+}
+
+.add-new{
+    color: white;
+    magin-top: 3px;
+}
+
+.placeholder {
+    font-style:italic;
+}
+
