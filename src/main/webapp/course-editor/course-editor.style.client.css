@@ -1,5 +1,11 @@
+html, body, body > div {
+height: 100%;
+}
+
 .wbdv-sticky-top {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
     background-color: #6495ED;
     z-index: 1;
@@ -12,6 +18,15 @@
 .page-header{
     color: white;
     margin-top: 5px;
+}
+
+.whole-page{
+    background-color: #F5F5F5;
+    padding-top: 52px;
+}
+
+.container{
+    padding-top: 2%;
 }
 
 .nav-btn{
