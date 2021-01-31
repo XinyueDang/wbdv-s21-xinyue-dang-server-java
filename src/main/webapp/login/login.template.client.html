@@ -4,36 +4,52 @@
     <meta charset="UTF-8">
     <title>Login</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet"/>
-    <link rel="stylesheet" href="login.style.client.css"/>
+    <link href="login.style.client.css" rel="stylesheet"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
 </head>
 <body>
 <div class="container">
-    <h1 class="row">Sign in</h1>
-    <div class="row">
-        Username <input class="form-control" placeholder="Alice"/>
-    </div>
-
-    <div class="row">
-        Password <input class="form-control" placeholder="123qwe!@#"/>
-    </div>
-    <div class="row">
-        <a class="btn btn-primary btn-block" href="../profile/profile.template.client.html">
-            Sign in
-        </a>
-
-    </div>
-    <div class="row justify-content-between">
-        <div class="col-auto">
-            <a href="#">Forgot Password?</a>
+    <h1>Sign In</h1>
+    <form>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="username">
+                Username </label>
+            <div class="col-sm-10">
+                <input class="form-control wbdv-field wbdv-username"
+                       id="username"
+                       placeholder="Alice">
+            </div>
         </div>
-        <div class="col-auto" text-right>
-            <a href="../register/register.template.client.html" align="right">Sign Up</a>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label" for="password">
+                Password </label>
+            <div class="col-sm-10">
+                <input class="form-control wbdv-field wbdv-password" id="password"
+                       placeholder="123qwe#$%" type="password">
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <a class="col" href="../index.html">Home</a>
-    </div>
+        <div class="form-group row">
+            <label class="col-sm-2 col-form-label"></label>
+            <div class="col-sm-10">
+                    <a class="btn btn-primary btn-block wbdv-login" href="../profile/profile.template.client.html">Sign In</a>
+                <div class="row">
+                    <div class="col-6">
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <div class="col-6">
+                        <a class="float-right" href="../register/register.template.client.html">Sign up</a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                    </div>
+                    <div class="col-6">
+                        <a class="float-right" href="../index.html">Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
-
 </body>
 </html>
