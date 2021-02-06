@@ -38,12 +38,16 @@
             .then(function (actualUser) {
               users.push(actualUser)
               renderUsers(users)
+              usernameFld.val('')
+              passwordFld.val('')
+              firstNameFld.val('')
+              lastNameFld.val('')
         })
     }
 
     function deleteUser(event) {
+        console.log(event)
         var deleteBtn = jQuery(event.target)
-        var theClass = deleteBtn.attr("class")
         var theIndex = deleteBtn.attr("id")
         var theId = users[theIndex]._id
         userService.deleteUser(theId)
@@ -73,7 +77,7 @@
 
         userService.updateUser(selectedUser._id, selectedUser)
           .then(function (status) {
-            var index = users.findIndex(user => user._id === user._id)
+            var index = users.findIndex(user => user._id === selectedUser._id)
             users[index] = selectedUser
             renderUsers(users)
           })
