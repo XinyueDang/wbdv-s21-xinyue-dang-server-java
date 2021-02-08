@@ -29,7 +29,7 @@
     function createUser() {
         var user = {};
         user.username = usernameFld.val();
-        user.password = '';
+        user.password = passwordFld.val();
         user.firstName = firstNameFld.val();
         user.lastName = lastNameFld.val();
         user.role = roleFld.val();
@@ -63,6 +63,7 @@
         var theId = selectBtn.attr("id")
         selectedUser = users.find(user => user._id === theId)
         usernameFld.val(selectedUser.username);
+        passwordFld.val(selectedUser.password)
         firstNameFld.val(selectedUser.firstName);
         lastNameFld.val(selectedUser.lastName);
         roleFld.val(selectedUser.role);
@@ -70,7 +71,7 @@
 
     function updateUser() {
         selectedUser.username = usernameFld.val();
-        selectedUser.password = '';
+        selectedUser.password = passwordFld.val();
         selectedUser.firstName = firstNameFld.val();
         selectedUser.lastName = lastNameFld.val();
         selectedUser.role = roleFld.val();
@@ -80,6 +81,10 @@
             var index = users.findIndex(user => user._id === selectedUser._id)
             users[index] = selectedUser
             renderUsers(users)
+            usernameFld.val('')
+            passwordFld.val('')
+            firstNameFld.val('')
+            lastNameFld.val('')
           })
 
     }
@@ -92,7 +97,7 @@
               .append(`
             <tr>
                 <td>${user.username}</td>
-                <td>${user.password}</td>
+                <td>${"***"}</td>
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.role}</td>
