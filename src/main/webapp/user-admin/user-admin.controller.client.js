@@ -46,7 +46,6 @@
     }
 
     function deleteUser(event) {
-        console.log(event)
         var deleteBtn = jQuery(event.target)
         var theIndex = deleteBtn.attr("id")
         var theId = users[theIndex]._id
@@ -85,6 +84,7 @@
             passwordFld.val('')
             firstNameFld.val('')
             lastNameFld.val('')
+            selectedUser = []
           })
 
     }
@@ -93,16 +93,17 @@
           tbody.empty();
           for (var i = 0; i < users.length; i++) {
             var user = users[i]
+            var str = '*'.repeat(user.password.length)
             tbody
               .append(`
             <tr>
                 <td>${user.username}</td>
-                <td>${"***"}</td>
+                <td>${str}</td>
                 <td>${user.firstName}</td>
                 <td>${user.lastName}</td>
                 <td>${user.role}</td>
                 <td>
-                    <span class="pull-right">
+                    <span class="float-end">
                        <i class="fa-lg fa fa-times wbdv-remove" id="${i}"></i>
                           &nbsp;
                        <i class="fa-lg fa fa-pencil wbdv-edit" id="${user._id}"></i>
