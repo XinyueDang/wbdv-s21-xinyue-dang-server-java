@@ -42,6 +42,7 @@
               passwordFld.val('')
               firstNameFld.val('')
               lastNameFld.val('')
+              roleFld.val('FACULTY')
         })
     }
 
@@ -84,6 +85,7 @@
             passwordFld.val('')
             firstNameFld.val('')
             lastNameFld.val('')
+            roleFld.val('FACULTY')
             selectedUser = []
           })
 
