@@ -5,7 +5,6 @@ import com.example.wbdvs21xinyuedangserverjava.services.WidgetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Date;
 import java.util.List;
 
 @RestController
@@ -17,9 +16,9 @@ public class WidgetController {
     @PostMapping("/api/topics/{tid}/widgets")
     public Widget createWidgetForTopic(
             @PathVariable("tid") String topicId,
-            @RequestBody Widget widget
-    ) {
-        return service.createWidgetForTopic(topicId, widget);
+            @RequestBody Widget widget) {
+        widget.setTopicId(topicId);
+        return service.createWidgetForTopic(widget);
     }
 
     @GetMapping("/api/widgets")
